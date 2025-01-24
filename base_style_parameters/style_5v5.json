@@ -1,0 +1,33 @@
+{
+    "style_state_1": 
+    {
+        "win": [0.5],
+        "goal": [0.5],
+        "lose_goal": [0.5],
+        "hold_ball": [0.5],
+        "get_possession": [0.5],
+        "pass": [0.5],
+        "active_area_x": [0, 0, 0],
+        "active_area_y": [0, 0, 0],
+        "spacing": [0.5],
+        "shot": [1, 1],
+        "move": [1, 1, 1],
+        "formation": [0.5]
+    },
+
+    "style_state_2" :
+    {
+        "win": [0.5],
+        "goal": [0.5],
+        "lose_goal": [0.5],
+        "hold_ball": [0.5],
+        "get_possession": [0.5],
+        "pass": [0.5],
+        "active_area_x": [0, 0, 0],
+        "active_area_y": [0, 0, 0],
+        "spacing": [0.5],
+        "shot": [1, 1],
+        "move": [1, 1, 1],
+        "formation": [0.5]
+    }
+}
