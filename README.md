@@ -132,7 +132,7 @@ python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_mali
 ## Contorl policy with style-parameter
 
 <img src="figures\param_control.gif" width="1000" alt="param control">
-<br> <br>
+<br>
 
 In all three scenarios, the corresponding style parameters can be adjusted through Box UI input parameters. You only need to set style_input to True in the arguments. An input box will appear shortly thereafter. 
 
@@ -221,7 +221,7 @@ python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_mali
 ## Contorl policy with natural-language instructions
 
 <img src="figures\language_control.gif" width="1000" alt="language control">
-<br> <br>
+<br>
 
 In all three scenarios, natural language input can be used to direct the multi-style policy to follow instructions, it requires using your own OpenAI API Key at language_control/llm.py *completion* function. 
 
