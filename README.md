@@ -2,7 +2,7 @@
 
 Welcome to the official PyTorch implementation of the paper:
 
-"Language-Controlled Diverse Style Policies" 
+"Complex Instruction Following with Diverse Style Policies" 
 
 This repository includes the code and model for grf environment inference. The training code is currently being refactored and organized for better readability and reproducibility.
 
@@ -131,6 +131,10 @@ python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_mali
 
 ### Contorl policy with style-parameter
 
+<video width="1000" controls>
+  <source src="figures\param_control.mp4" type="video/mp4">
+</video>
+
 In all three scenarios, the corresponding style parameters can be adjusted through Box UI input parameters. You only need to set style_input to True in the arguments. An input box will appear shortly thereafter. 
 
 After launching the game environment, enter the desired style parameters and simply click submit, you can change the style parameters while the environment is running. You can also modify the initial style parameters in the corresponding JSON file within the *base_style_parameters* folder before launching.
@@ -216,6 +220,10 @@ python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_mali
 - In the 5v5 environment, all parameters can be freely combined, allowing you to configure them according to your preferences to create the desired style.
 
 ### Contorl policy with natural-language instructions
+
+<video width="1000" controls>
+  <source src="figures\language_control.mp4" type="video/mp4">
+</video>
 
 In all three scenarios, natural language input can be used to direct the multi-style policy to follow instructions, it requires using your own OpenAI API Key at language_control/llm.py *completion* function. 
 
