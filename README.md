@@ -94,34 +94,34 @@ cp -r env/random_ball_scenarios/* your_conda_path/envs/grf/Lib/site-packages/gfo
 pip install -r requirements.txt
 ```
 
-## Run a game
+# Run a game
 
 After starting the game, make sure to click elsewhere with the mouse, and avoid clicking on the game screen afterward to prevent it from freezing.
 
 Use Ctrl+C in the command line to close the game and the input subprocess.
 
 ---
-### Choose a scenario, run with base style parameters
+## Choose a scenario, run with base style parameters
 
 The following command will run using a pre-configured style parameter, and in the 5v5 mode, the opponent will also use this style parameter.
 
 The team wearing yellow uniforms is my_ai, the team wearing blue uniforms is the opponent.
 
-#### Sigle-player scenario
+### Sigle-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_single_player --opponent noop_AI --env instruction_follow_single --agent_type agents_single_player
 ```
 
 ---
-#### Two-player scenario
+### Two-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_two_player --opponent noop_AI --env instruction_follow_2v2 --agent_type agents_two_player
 ```
 
 ---
-#### 5v5 scenario
+### 5v5 scenario
 
 The opponent can choose to engage in self-play using lcdsp_two_player or compete against noop_AI and buildin_AI.
 
@@ -129,11 +129,10 @@ The opponent can choose to engage in self-play using lcdsp_two_player or compete
 python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_malib --agent_type agents_5v5
 ```
 
-### Contorl policy with style-parameter
+## Contorl policy with style-parameter
 
-<video width="1000" controls>
-  <source src="figures\param_control.mp4" type="video/mp4">
-</video>
+<img src="figures\param_control.gif" width="1000" alt="param control">
+<br> <br>
 
 In all three scenarios, the corresponding style parameters can be adjusted through Box UI input parameters. You only need to set style_input to True in the arguments. An input box will appear shortly thereafter. 
 
@@ -141,7 +140,7 @@ After launching the game environment, enter the desired style parameters and sim
 
 The team wearing yellow uniforms is the instruction-controlled team, attacking towards the right side of the field. 
 
-#### Sigle-player scenario
+### Sigle-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_single_player --opponent noop_AI --env instruction_follow_single --agent_type agents_single_player --style_input True
@@ -172,7 +171,7 @@ To execute the *shooting* behavioral style, set the active_area to 0 and goal to
 To execute the *navigate* behavioral style, set the *shot* to 0 and *goal* to 0. Set *move* and *active_area_x*, *active_area_y* as one-hot vectors to select the corresponding actions.
 
 ---
-#### Two-player scenario
+### Two-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_two_player --opponent noop_AI --env instruction_follow_2v2 --agent_type agents_two_player --style_input True
@@ -209,7 +208,7 @@ The remaining style parameters not mentioned for this scenario are not utilized 
 
 
 ---
-#### 5v5 scenario
+### 5v5 scenario
 
 The opponent can choose to engage in self-play using lcdsp_5v5 or compete against noop_AI and buildin_AI.
 
@@ -219,11 +218,10 @@ python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_mali
 
 - In the 5v5 environment, all parameters can be freely combined, allowing you to configure them according to your preferences to create the desired style.
 
-### Contorl policy with natural-language instructions
+## Contorl policy with natural-language instructions
 
-<video width="1000" controls>
-  <source src="figures\language_control.mp4" type="video/mp4">
-</video>
+<img src="figures\language_control.gif" width="1000" alt="language control">
+<br> <br>
 
 In all three scenarios, natural language input can be used to direct the multi-style policy to follow instructions, it requires using your own OpenAI API Key at language_control/llm.py *completion* function. 
 
@@ -231,21 +229,21 @@ You can select the instructions used in the paper from language_control/scenario
 
 If a command cannot be parsed into style parameters, it will revert to the default style.
 
-#### Sigle-player scenario
+### Sigle-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_single_player --opponent noop_AI --env instruction_follow_single --agent_type agents_single_player --language_input True
 ```
 
 ---
-#### Two-player scenario
+### Two-player scenario
 
 ```python
 python run_log.py --my_ai lcdsp_two_player --opponent noop_AI --env instruction_follow_2v2 --agent_type agents_two_player --language_input True
 ```
 
 ---
-#### 5v5 scenario
+### 5v5 scenario
 
 The opponent can choose to engage in self-play using lcdsp_two_player or compete against noop_AI and buildin_AI.
 
@@ -253,10 +251,10 @@ The opponent can choose to engage in self-play using lcdsp_two_player or compete
 python run_log.py --my_ai lcdsp_5v5 --opponent lcdsp_5v5 --env football_5v5_malib --agent_type agents_5v5 --language_input True
 ```
 
-The following diagram illustrates the behaviors of the Counter Attack and Tiki-Taka tactics.
+The following diagram illustrates the behaviors of the Counter Attack and Tiki-Taka tactics in 5v5 scenario.
 
 <img src="figures\two_tactics.png" alt="5v5 tactics" width="1000">
 
 
-## Train your own policy
+# Train your own policy
 The training code is currently being refactored and organized for better readability and reproducibility.
